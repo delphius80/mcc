@@ -16,9 +16,9 @@ from openai import AsyncOpenAI
 
 # ---------------- CONFIG ----------------
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-MODERATOR_ID = int(os.environ["MODERATOR_ID"])
-DEEPSEEK_API_KEY = os.environ["DEEPSEEK_API_KEY"]
+BOT_TOKEN = "8525827747:AAGm2wVSTaru9hRu4rNMEG31CWS1dHlGeeY"
+MODERATOR_ID = "7827962328"
+DEEPSEEK_API_KEY = "sk-ccb31d5d70184b478422d0f9eadd98c1"
 
 DB = "messages.db"
 
@@ -324,3 +324,4 @@ if __name__ == "__main__":
 
     import asyncio
     asyncio.run(main())
+
