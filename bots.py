@@ -21,7 +21,7 @@ MODERATOR_ID = 7827962328
 DEEPSEEK_API_KEY = "sk-ccb31d5d70184b478422d0f9eadd98c1"
 
 DB = "messages.db"
-DIGEST_HOUR = 21
+DIGEST_HOUR = 3
 DIGEST_MINUTE = 0
 
 client = OpenAI(api_key=DEEPSEEK_API_KEY)
@@ -190,3 +190,4 @@ async def main():
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
+
