@@ -22,9 +22,7 @@ from telegram.ext import (
 
 BOT_TOKEN = "8525827747:AAGm2wVSTaru9hRu4rNMEG31CWS1dHlGeeY"
 
-MODERATORS = {
-   
-}
+MODERATORS = {7827962328}
 
 REQUEST_TTL = 24
 
