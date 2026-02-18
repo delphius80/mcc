@@ -20,16 +20,13 @@ from telegram.ext import (
 
 # ================= CONFIG =================
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
+BOT_TOKEN = "8525827747:AAGm2wVSTaru9hRu4rNMEG31CWS1dHlGeeY"
 
 MODERATORS = {
-    int(x)
-    for x in os.environ["MODERATORS"].split(",")
+   
 }
 
-REQUEST_TTL = int(
-    os.environ.get("REQUEST_TTL_HOURS", "24")
-)
+REQUEST_TTL = 24
 
 DB_FILE = "requests.db"
 
