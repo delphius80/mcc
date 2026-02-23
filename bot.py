@@ -13,8 +13,8 @@ from telegram.ext import (
 )
 import os
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-MODERATOR_ID = os.environ.get("MODERATOR_ID")
+BOT_TOKEN = "1111111"
+MODERATOR_ID = 1
 
 # user_id -> chat_id
 pending = {}
@@ -116,3 +116,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
