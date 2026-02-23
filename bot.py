@@ -11,16 +11,10 @@ from telegram.ext import (
     CallbackQueryHandler,
     filters,
 )
-import json
 import os
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.json")
-
-with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-    config = json.load(f)
-
-BOT_TOKEN = config["BOT_TOKEN"]
-MODERATOR_ID = config["MODERATOR_ID"]
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+MODERATOR_ID = os.environ.get("MODERATOR_ID")
 
 # user_id -> chat_id
 pending = {}
@@ -36,14 +30,12 @@ async def on_join_request(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
         chat_id=user.id,
         text=(
-              "Здравствуйте, я администратор группы\n"
-              "Secret Pleasure, вы подали заявку на вступление\n"
-              "Пришли пожалуйста (кружок) видеоприветствие, где:\n"
-              "- Вы смотрите в камеру\n"
-              "- Называете свое имя, возраст, город\n"
-              "- Говорите фразу «Хочу вступить в группу»\n"
-              "При вступлении в группу,\n"
-              "просьба ознакомиться с правилами!\n"
+            "Это закрытое сообщество.\n\n"
+            "Пришлите *кружок (видеосообщение)* до 30 секунд, где:\n"
+            "— вы смотрите в камеру\n"
+            "— называете свое имя, возраст и город\n"
+            "— говорите фразу:\n"
+            "«Хочу вступить в группу»"
         ),
         parse_mode="Markdown",
     )
