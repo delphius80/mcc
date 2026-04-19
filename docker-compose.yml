@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    container_name: joplin_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: joplin
+      POSTGRES_USER: joplin
+      POSTGRES_PASSWORD: strongpassword
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+  app:
+    image: joplin/server:latest
+    container_name: joplin_app
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      APP_PORT: 22300
+      APP_BASE_URL: https://1314148-cw37703.tw1.ru
+      DB_CLIENT: pg
+      POSTGRES_PASSWORD: strongpassword
+      POSTGRES_DATABASE: joplin
+      POSTGRES_USER: joplin
+      POSTGRES_PORT: 5432
+      POSTGRES_HOST: db
+    ports:
+      - "22300:22300"
